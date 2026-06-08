@@ -424,7 +424,8 @@
   .speakers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 48px; }
   .speaker-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 30px 22px; text-align: center; background: rgba(255,255,255,0.025); transition: border-color 0.25s, background 0.25s, box-shadow 0.25s; }
   .speaker-card:hover { border-color: rgba(45,179,96,0.3); background: rgba(45,179,96,0.04); box-shadow: 0 6px 28px rgba(0,0,0,0.2); }
-  .speaker-avatar { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--navy-light), var(--green)); margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem; font-weight: 800; color: rgba(255,255,255,0.4); border: 2px solid rgba(45,179,96,0.35); box-shadow: 0 0 0 4px rgba(45,179,96,0.08); }
+  .speaker-avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--navy-light), var(--green)); margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem; font-weight: 800; color: rgba(255,255,255,0.4); border: 2px solid rgba(45,179,96,0.35); box-shadow: 0 0 0 4px rgba(45,179,96,0.08); overflow: hidden; }
+  .speaker-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
   .speaker-role { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 5px; }
   .speaker-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
   .speaker-org { font-size: 0.76rem; color: var(--gray); }
@@ -528,6 +529,26 @@
   .venue-map-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); text-align: center; line-height: 1.5; }
 
   /* ══════════════════════════════════════
+     ACCOMMODATION
+  ══════════════════════════════════════ */
+  .accommodation { background: #051828; }
+  .accom-intro { max-width: 720px; margin: 18px auto 0; text-align: center; font-size: 0.9rem; color: var(--gray); line-height: 1.75; }
+  .accom-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 48px; }
+  .accom-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 26px 24px; background: rgba(255,255,255,0.025); transition: border-color 0.25s, background 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; gap: 12px; }
+  .accom-card:hover { border-color: rgba(45,179,96,0.3); background: rgba(45,179,96,0.04); box-shadow: 0 6px 28px rgba(0,0,0,0.2); }
+  .accom-distance { align-self: flex-start; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-bright); background: rgba(45,179,96,0.1); border: 1px solid rgba(45,179,96,0.25); border-radius: 20px; padding: 4px 11px; }
+  .accom-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; color: var(--white); line-height: 1.15; }
+  .accom-address { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+  .accom-detail { font-size: 0.78rem; color: var(--gray); line-height: 1.6; }
+  .accom-contacts { display: flex; flex-direction: column; gap: 5px; margin-top: auto; padding-top: 6px; }
+  .accom-contacts a, .accom-contact { font-size: 0.78rem; color: var(--gray); text-decoration: none; display: flex; align-items: center; gap: 8px; word-break: break-word; }
+  .accom-contacts a:hover { color: var(--green-bright); }
+  .accom-shuttle { display: inline-flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 600; color: var(--green-bright); font-style: italic; }
+  .accom-footnote { margin-top: 32px; text-align: center; font-size: 0.84rem; color: var(--gray); line-height: 1.8; }
+  .accom-footnote a { color: var(--green-bright); text-decoration: none; }
+  .accom-footnote a:hover { text-decoration: underline; }
+
+  /* ══════════════════════════════════════
      MAIN REGISTER SECTION
   ══════════════════════════════════════ */
   .register {
@@ -603,6 +624,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .pillars-grid { grid-template-columns: repeat(2,1fr); }
     .speakers-grid { grid-template-columns: repeat(2,1fr); }
+    .accom-grid { grid-template-columns: repeat(2,1fr); }
     .audience-grid { grid-template-columns: repeat(3,1fr); }
     .sponsor-tiers { grid-template-columns: repeat(2,1fr); }
     .venue-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -640,6 +662,7 @@
     /* Speakers */
     .speakers-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
     .speaker-card { padding: 22px 16px; }
+    .accom-grid { grid-template-columns: 1fr; gap: 14px; }
 
     /* Hosts */
     .hosts-grid { grid-template-columns: 1fr; gap: 14px; }
@@ -880,6 +903,7 @@
     <li><a href="#hosts">Hosts</a></li>
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#venue">Venue</a></li>
+    <li><a href="#accommodation">Stay</a></li>
     <li><a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="nav-cta">Get Tickets</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -895,6 +919,7 @@
   <a href="#hosts" class="mob-link">Hosts</a>
   <a href="#speakers" class="mob-link">Speakers</a>
   <a href="#venue" class="mob-link">Venue</a>
+  <a href="#accommodation" class="mob-link">Accommodation</a>
   <a href="#sponsorship" class="mob-link">Sponsorship</a>
   <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="mob-cta mob-link">🎟 Get Tickets</a>
 </div>
@@ -1183,14 +1208,26 @@
   <div class="section-label">Speakers</div>
   <h2 class="section-title">World-Class <em>Thought Leaders</em></h2>
   <div class="speakers-grid">
-    <div class="speaker-card"><div class="speaker-avatar">KS</div><div class="speaker-role">Keynote Speaker</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">Research Leader</div></div>
-    <div class="speaker-card"><div class="speaker-avatar">PI</div><div class="speaker-role">Policy Expert</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">Government & Policy</div></div>
-    <div class="speaker-card"><div class="speaker-avatar">AI</div><div class="speaker-role">AI & Tech Innovator</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">Digital Health</div></div>
-    <div class="speaker-card"><div class="speaker-avatar">RL</div><div class="speaker-role">Research Leader</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">Genomics & Biotech</div></div>
-    <div class="speaker-card"><div class="speaker-avatar">IV</div><div class="speaker-role">Investor & Advisor</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">Venture & Finance</div></div>
-    <div class="speaker-card"><div class="speaker-avatar">YS</div><div class="speaker-role">Young Scientist</div><div class="speaker-name">To Be Announced</div><div class="speaker-org">African Innovation</div></div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1780894741/evelyne_gfo8fh.jpg" alt="Prof. Evelyne Bischof" loading="lazy"></div>
+      <div class="speaker-role">Longevity Medicine</div>
+      <div class="speaker-name">Prof. Evelyne Bischof, MD, PhD</div>
+      <div class="speaker-org">Healthy Longevity Medicine Society — Co-founder & President</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1749332695/natasha_vc34pz.webp" alt="Natasha Vita-More" loading="lazy"></div>
+      <div class="speaker-role">Futures Theorist</div>
+      <div class="speaker-name">Natasha Vita-More, Ph.D</div>
+      <div class="speaker-org">Awarded Creative & Longevity Advocate — Human+AI Project</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1780894741/dalvi_ud6ban.jpg" alt="Dr Salmaan Dalvi" loading="lazy"></div>
+      <div class="speaker-role">Regenerative Medicine</div>
+      <div class="speaker-name">Dr Salmaan Dalvi</div>
+      <div class="speaker-org">CEO, RCMRegistry & Global Regenerative Medicine Society; former Chapter Head, UK GICTC</div>
+    </div>
   </div>
-  <p class="speakers-notice">Speaker announcements coming soon — follow us for updates</p>
+  <p class="speakers-notice">More speaker announcements coming soon — follow us for updates</p>
 </section>
 
 <!-- AUDIENCE -->
@@ -1308,6 +1345,72 @@
   </div>
 </section>
 
+<!-- ACCOMMODATION -->
+<section class="accommodation" id="accommodation">
+  <div class="section-label">Accommodation</div>
+  <h2 class="section-title">Where to <em>Stay</em></h2>
+  <p class="accom-intro">A selection of hotels and guesthouses in and around Ga-Rankuwa, close to the venue. Distances shown are approximate driving distances from Sefako Makgatho Health Sciences University.</p>
+  <div class="accom-grid">
+
+    <div class="accom-card">
+      <span class="accom-distance">≈ 15.4 km</span>
+      <div class="accom-name">Soshanguve Hotel</div>
+      <div class="accom-address">1301 Block K (opposite Giant Stadium)</div>
+      <span class="accom-shuttle">🚌 Free Shuttle Services — Tshwane Bus</span>
+      <div class="accom-contacts">
+        <a href="tel:+27764185347">📞 076 418 5347</a>
+        <a href="tel:+27127993649">📞 012 799 3649</a>
+        <a href="mailto:info@soshanguvehotel.co.za">✉ info@soshanguvehotel.co.za</a>
+        <a href="https://soshanguvehotel.co.za/" target="_blank" rel="noopener">🌐 soshanguvehotel.co.za</a>
+      </div>
+    </div>
+
+    <div class="accom-card">
+      <span class="accom-distance">≈ 6–10 km</span>
+      <div class="accom-name">Mhlahlo Guests</div>
+      <div class="accom-address">210 Mosoane Street, 0208 Ga-Rankuwa</div>
+      <div class="accom-detail">Hostel with air-conditioning, private bathrooms and kitchenettes. Each room includes a work desk, wardrobe and free toiletries.</div>
+      <div class="accom-contacts">
+        <a href="https://www.booking.com/" target="_blank" rel="noopener">🌐 Book via Booking.com</a>
+      </div>
+    </div>
+
+    <div class="accom-card">
+      <span class="accom-distance">≈ 2.2 km</span>
+      <div class="accom-name">Rams Motel</div>
+      <div class="accom-address">2977 Zone 2 Mothupi Street, Ga-Rankuwa, Pretoria, 0208, Gauteng</div>
+      <div class="accom-contacts">
+        <a href="https://www.lekkeslaap.co.za/" target="_blank" rel="noopener">🌐 Book via LekkeSlaap.co.za</a>
+      </div>
+    </div>
+
+    <div class="accom-card">
+      <span class="accom-distance">≈ 20.1 km</span>
+      <div class="accom-name">Casta Diva Boutique Hotel</div>
+      <div class="accom-address">67 Albatros Street, Ninapark, Pretoria, 0152, Gauteng</div>
+      <div class="accom-contacts">
+        <a href="tel:+27815424449">📞 Mobile / WhatsApp: +27 (0) 81 542 4449</a>
+        <a href="mailto:info@castadiva.co.za">✉ info@castadiva.co.za</a>
+        <a href="https://castadiva.biz/home" target="_blank" rel="noopener">🌐 castadiva.biz</a>
+      </div>
+    </div>
+
+    <div class="accom-card">
+      <span class="accom-distance">≈ 14.9 km</span>
+      <div class="accom-name">Goldrush Bingo Morula</div>
+      <div class="accom-address">Lucas Mangope Rd, Mabopane Unit U, Mabopane, 0190</div>
+      <div class="accom-contacts">
+        <a href="tel:+27127990000">📞 012 799 0000</a>
+      </div>
+    </div>
+
+  </div>
+  <p class="accom-footnote">
+    Official destination website: <a href="https://discovertshwane.com/" target="_blank" rel="noopener">discovertshwane.com</a><br>
+    For more hotels in the city centre, please visit <a href="https://www.visittshwane.co.za/" target="_blank" rel="noopener">visittshwane.co.za</a>
+  </p>
+</section>
+
 <!-- REGISTER CTA -->
 <section class="register" id="register">
   <div class="register-content">
@@ -1365,6 +1468,7 @@
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#sponsorship">Sponsorship</a></li>
         <li><a href="#venue">Venue & Travel</a></li>
+        <li><a href="#accommodation">Accommodation</a></li>
       </ul>
     </div>
     <div>
@@ -1475,7 +1579,7 @@
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.pillar-card, .about-feature, .speaker-card, .aud-card, .sponsor-tier').forEach((el, i) => {
+  document.querySelectorAll('.pillar-card, .about-feature, .speaker-card, .accom-card, .aud-card, .sponsor-tier').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(22px)';
     el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.07}s, transform 0.5s ease ${(i % 4) * 0.07}s`;
