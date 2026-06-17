@@ -367,13 +367,16 @@
     background: #f3f1e8;
     border-radius: 0 8px 8px 0;
   }
+  .prog-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 28px; }
+  .prog-legend-item { display: inline-flex; align-items: center; gap: 7px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark); }
+  .prog-legend-dot { width: 10px; height: 10px; border-radius: 3px; }
   .session-list { display: flex; flex-direction: column; }
   .session-item {
     display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 0;
+    grid-template-columns: 76px 1fr;
+    gap: 20px;
     border-top: 1px solid #e0dfd7;
-    padding: 22px 16px;
+    padding: 18px 16px;
     transition: background 0.2s, border-color 0.2s;
     border-radius: 6px;
     background: transparent;
@@ -382,6 +385,15 @@
     background: #f0eee6;
     border-top-color: var(--green-bright);
   }
+  .session-time {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green-bright);
+    line-height: 1.2;
+    padding-top: 2px;
+  }
+  .session-body { display: flex; flex-direction: column; gap: 7px; }
   .session-type-badge {
     display: inline-block;
     font-family: 'Barlow Condensed', sans-serif;
@@ -392,7 +404,6 @@
     padding: 4px 9px;
     border-radius: 3px;
     align-self: flex-start;
-    margin-top: 2px;
   }
   .badge-keynote {
     background: rgba(201,168,76,0.13);
@@ -409,13 +420,29 @@
     color: var(--green-bright);
     border: 1px solid rgba(45,179,96,0.18);
   }
+  .badge-ceremony {
+    background: rgba(122,90,200,0.10);
+    color: #7a5ac8;
+    border: 1px solid rgba(122,90,200,0.22);
+  }
+  .badge-break {
+    background: rgba(120,134,148,0.10);
+    color: #6f7d8a;
+    border: 1px solid rgba(120,134,148,0.22);
+  }
   .session-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
+    font-size: 1.02rem;
     font-weight: 600;
     color: var(--text-darker);
     line-height: 1.3;
   }
+  .session-speaker {
+    font-size: 0.82rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+  .session-speaker strong { color: var(--green); font-weight: 600; }
 
   /* ══════════════════════════════════════
      SPEAKERS
@@ -671,7 +698,7 @@
 
     /* Program */
     .session-item { grid-template-columns: 1fr; gap: 8px; }
-    .session-type-badge { margin-bottom: 4px; }
+    .session-time { color: var(--green); }
 
     /* Speakers */
     .speakers-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
@@ -1161,36 +1188,59 @@
     <button class="prog-tab active" onclick="switchDay('day1',this)">Day 1 — 29 June</button>
     <button class="prog-tab" onclick="switchDay('day2',this)">Day 2 — 30 June</button>
   </div>
+  <div class="prog-legend">
+    <span class="prog-legend-item"><span class="prog-legend-dot" style="background:var(--gold);"></span> Keynote</span>
+    <span class="prog-legend-item"><span class="prog-legend-dot" style="background:var(--cyan);"></span> Panel</span>
+    <span class="prog-legend-item"><span class="prog-legend-dot" style="background:var(--green-bright);"></span> Presentation</span>
+    <span class="prog-legend-item"><span class="prog-legend-dot" style="background:#7a5ac8;"></span> Ceremony</span>
+    <span class="prog-legend-item"><span class="prog-legend-dot" style="background:#6f7d8a;"></span> Break</span>
+  </div>
   <div class="day-panel active" id="day1">
-    <div class="day-theme">AI Innovation, Predictive Health, and Policy</div>
+    <div class="day-theme">Decoding Aging — The Science, Exploring Predictive Health Approaches &amp; the Policy of Longevity</div>
     <div class="session-list">
-      <div class="session-item"><span><span class="session-type-badge badge-keynote">Keynote</span></span><div class="session-title">Build to Last: Africa's Position in Longevity and its Future Economy</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Thrive to Produce: Biodiversity as an Economic Engine</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Longevity in the Lab: Emerging Biotech and African Genomics</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Preventive Systems: Integrated Models for Chronic Disease Reduction</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Precision Ethnomedicine: Using AI & African Bio-Prospecting to Spearhead Longevity Tourism</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Policy & Roadmap: Cross-Sector Partnerships for National Growth</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-keynote">Keynote</span></span><div class="session-title">The Ethiopia–SA Corridor: Linking Regional Longevity Initiatives</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Resilient, Productive Communities: Scaling Resilience in Rural Mining & Farming Towns</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Opening the Gateway for Futurists in Africa: Young Leaders in Science Innovation</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">The Digital Pulse: AI Biomarkers & Wearables in the Workforce</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Wellness Economy: Transforming Bio-Heritage & Medical Tourism into Drivers of Wealth</div></div>
+      <div class="session-item"><div class="session-time">08:00</div><div class="session-body"><span class="session-type-badge badge-break">Registration</span><div class="session-title">Arrivals &amp; Morning Coffee</div></div></div>
+      <div class="session-item"><div class="session-time">09:00</div><div class="session-body"><span class="session-type-badge badge-ceremony">Opening</span><div class="session-title">Convenor's Welcome — Setting the African Longevity Agenda</div><div class="session-speaker"><strong>Brenda Ramokopelwa</strong> — Convenor &amp; CEO, Afrolongevity / TAFFD's</div></div></div>
+      <div class="session-item"><div class="session-time">09:15</div><div class="session-body"><span class="session-type-badge badge-ceremony">Welcome</span><div class="session-title">Welcome Address</div><div class="session-speaker"><strong>City of Tshwane Mayor</strong></div></div></div>
+      <div class="session-item"><div class="session-time">09:30</div><div class="session-body"><span class="session-type-badge badge-ceremony">Host Welcome</span><div class="session-title">Host Address — Office of the Vice-Chancellor</div><div class="session-speaker"><strong>Sefako Makgatho Health Sciences University (SMU)</strong></div></div></div>
+      <div class="session-item"><div class="session-time">09:45</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">Afrolongevity: Engineering Africa's Healthspan Advantage — a systems blueprint aligning indigenous wisdom, genomics &amp; biotechnology to close the continent's life-expectancy gap</div><div class="session-speaker"><strong>Osinakachi Akuma Kalu</strong> — TAFFD's &amp; Afrolongevity</div></div></div>
+      <div class="session-item"><div class="session-time">10:15</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Why We Age — and Whether We Can Rewrite It: the information theory of aging, epigenetic control, and the real evidence behind cellular &amp; skin rejuvenation</div><div class="session-speaker"><strong>Dr David Morrison, PhD</strong> — Bio Nova Veritas / Nova Vita Biochemicals</div></div></div>
+      <div class="session-item"><div class="session-time">10:40</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Innovation Algorithm: Transforming Teaching and Learning Frameworks, Clinical Approaches and Predictive Health Models in Africa</div><div class="session-speaker"><strong>Dr. Nadine Hoosen</strong> — Elsevier Health</div></div></div>
+      <div class="session-item"><div class="session-time">11:00</div><div class="session-body"><span class="session-type-badge badge-break">Coffee Break</span><div class="session-title">Morning Networking &amp; Refreshments</div></div></div>
+      <div class="session-item"><div class="session-time">11:30</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">From Clinic to Population: Healthy-Longevity Medicine in Practice, accredited Education &amp; Public-health integration</div><div class="session-speaker"><strong>Prof Evelyn Bischof, MD, PhD</strong> — Healthy Longevity Medicine Society</div></div></div>
+      <div class="session-item"><div class="session-time">11:55</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Navigating Africa's Silver Tide: The risks and opportunities of Demographic Change</div><div class="session-speaker"><strong>Dr Cathy Davis</strong></div></div></div>
+      <div class="session-item"><div class="session-time">12:15</div><div class="session-body"><span class="session-type-badge badge-panel">Panel</span><div class="session-title">From Lab to Lifespan: Translating Aging Science into Real-World Healthspan</div><div class="session-speaker"><strong>Dr David Morrison, Osinakachi Kalu, Dr Cathy Davis, Dr Mboweni Shiela</strong> (Unisa)</div></div></div>
+      <div class="session-item"><div class="session-time">13:00</div><div class="session-body"><span class="session-type-badge badge-break">Lunch</span><div class="session-title">Networking Lunch (60 mins)</div></div></div>
+      <div class="session-item"><div class="session-time">14:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Digital Pulse: AI biomarkers &amp; wearables in the African workforce &amp; community</div></div></div>
+      <div class="session-item"><div class="session-time">14:20</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">Precision Ethnomedicine: AI-Driven Bioprospecting and Integrated Models for Disease Reduction</div><div class="session-speaker"><strong>Prof Natasha Vita-More, PhD</strong></div></div></div>
+      <div class="session-item"><div class="session-time">14:50</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Wellness Economy: Turning bio-heritage &amp; medical tourism into engines of wealth</div><div class="session-speaker"><strong>MMC Tshegofatso Mashabela</strong></div></div></div>
+      <div class="session-item"><div class="session-time">15:10</div><div class="session-body"><span class="session-type-badge badge-panel">Panel</span><div class="session-title">Policy &amp; Roadmap: Cross-Sector Partnerships for National Health &amp; Growth</div><div class="session-speaker"><strong>ASSAF / MMC Health / SMU</strong></div></div></div>
+      <div class="session-item"><div class="session-time">16:00</div><div class="session-body"><span class="session-type-badge badge-ceremony">Closing</span><div class="session-title">Day One Closing Remarks</div></div></div>
     </div>
   </div>
   <div class="day-panel" id="day2">
-    <div class="day-theme">Leveraging Workforce Resilience, Natural Resources and Indigenous Biodiversity for Longevity</div>
+    <div class="day-theme">The African Advantage — Indigenous Biodiversity, Workforce Resilience &amp; the Longevity Economy</div>
     <div class="session-list">
-      <div class="session-item"><span><span class="session-type-badge badge-keynote">Keynote</span></span><div class="session-title">The Longevity Dividend: Scaling African GDP Through Healthspan</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Predictive Analytics: Managing National Health Liabilities via Technology</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Mining & Industrial Resilience: Occupational Health and Workforce Longevity</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">The Clean Air and Water Metric: Biomarkers for Environmental Health Compliance</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Back to Boots with Science: Clinical Potential of Indigenous Herbal Wisdom</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Green Belts & Rehabilitation: Ecosystem Restoration for Community Health</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">The ROI of Wellness: ESG, Government and Private Funding for Longevity</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Regenerative Agriculture: Boosting Productivity Through Soil & Nutrition Science</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">The Landscape Potential: Mapping Africa's Natural Pharmacy for Longevity Therapeutics</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-panel">Panel</span></span><div class="session-title">Impactful Science Translation: Lab, Practice and Community</div></div>
-      <div class="session-item"><span><span class="session-type-badge badge-pres">Presentation</span></span><div class="session-title">Cultivating the Future: Institutionalizing Longevity Science in African Education and Youth Ecosystems</div></div>
+      <div class="session-item"><div class="session-time">08:00</div><div class="session-body"><span class="session-type-badge badge-break">Registration</span><div class="session-title">Arrivals, Coffee &amp; Day-One Recap</div></div></div>
+      <div class="session-item"><div class="session-time">08:55</div><div class="session-body"><span class="session-type-badge badge-ceremony">Opening</span><div class="session-title">Day Two Welcome &amp; Framing</div></div></div>
+      <div class="session-item"><div class="session-time">09:00</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">The Longevity Dividend: Scaling African GDP through healthspan</div><div class="session-speaker"><strong>Mr Dante Mashile</strong> — Head of Investment, Office of the Premier KZN</div></div></div>
+      <div class="session-item"><div class="session-time">09:25</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The ROI of Wellness: ESG, Government &amp; Private Funding for Longevity</div><div class="session-speaker"><strong>Mr Isaac Makwela</strong> — MOC Investment and Corporate Finance Engineering</div></div></div>
+      <div class="session-item"><div class="session-time">09:50</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">The African Longevity Experience: Regenerative Medicine, Healthy Aging &amp; the Future of Health Systems</div><div class="session-speaker"><strong>Dr Salmaan Dalvi</strong> — Regenerative and Cellular Medicine Registry (RCMR)</div></div></div>
+      <div class="session-item"><div class="session-time">10:10</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Back to Roots with Science: Harnessing Indigenous Knowledge Systems (IKS) to Strengthen Africa's Medical Tourism Architecture</div><div class="session-speaker"><strong>Ambassador Pule Malefane</strong> — Mpho Madi Trust</div></div></div>
+      <div class="session-item"><div class="session-time">10:30</div><div class="session-body"><span class="session-type-badge badge-panel">Panel</span><div class="session-title">Build to Last with Health, Policy, Prosperity: Securing Africa's Health-Economic Future</div><div class="session-speaker"><strong>Isaac Makwela, Dante Mashile, Pule Malefane, Dr Mabena</strong></div></div></div>
+      <div class="session-item"><div class="session-time">11:10</div><div class="session-body"><span class="session-type-badge badge-break">Coffee Break</span><div class="session-title">Morning Networking &amp; Refreshments</div></div></div>
+      <div class="session-item"><div class="session-time">11:40</div><div class="session-body"><span class="session-type-badge badge-keynote">Keynote</span><div class="session-title">Mining &amp; Industrial Resilience: Occupational Health &amp; Workforce Longevity</div><div class="session-speaker"><strong>ASSAF</strong></div></div></div>
+      <div class="session-item"><div class="session-time">12:05</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Regenerative Agriculture: Boosting Productivity and Health through Soil &amp; Nutrition</div><div class="session-speaker"><strong>Dr Cebisa Mabena</strong> — Mothong Heritage</div></div></div>
+      <div class="session-item"><div class="session-time">12:30</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Leveraging the Ecosystem: Integrated Model for Chronic Disease Management</div><div class="session-speaker"><strong>Dr Mboweni Shiela</strong> — Faculty of Health Sciences, Unisa</div></div></div>
+      <div class="session-item"><div class="session-time">12:50</div><div class="session-body"><span class="session-type-badge badge-break">Lunch</span><div class="session-title">Networking Lunch</div></div></div>
+      <div class="session-item"><div class="session-time">13:30</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Impactful Science Translation: Lab, Practice &amp; Community</div><div class="session-speaker"><strong>ASSAF</strong></div></div></div>
+      <div class="session-item"><div class="session-time">13:50</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Cultivating the Future: Institutionalizing Longevity Science in African Education &amp; Community Ecosystems</div><div class="session-speaker"><strong>SMU</strong></div></div></div>
+      <div class="session-item"><div class="session-time">14:10</div><div class="session-body"><span class="session-type-badge badge-panel">Panel</span><div class="session-title">Opening the Gateway for Young Futurists: Young Scientists Project Presentation</div><div class="session-speaker"><strong>SMU</strong></div></div></div>
+      <div class="session-item"><div class="session-time">14:50</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Extracting Vitality: The Economic Imperative of Healthspan in Mining Communities</div><div class="session-speaker"><strong>HRH Kgosana Koketso Rakhudu, PhD</strong> — Bafokeng Royal House</div></div></div>
+      <div class="session-item"><div class="session-time">15:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Green Belts &amp; Rehabilitation: Ecosystem Restoration for Community Health Focus</div><div class="session-speaker"><strong>Prince Freedom Riba, Adv</strong> — Ga-Riba Royal House</div></div></div>
+      <div class="session-item"><div class="session-time">15:10</div><div class="session-body"><span class="session-type-badge badge-panel">Royal Desk Panel</span><div class="session-title">Sovereign Stewardship: The Royal Role in Land, Indigenous Knowledge, and the Health Economy</div><div class="session-speaker">Facilitated by <strong>Heru Thabo Matsafu</strong> · Panellists: HRH Princess Thandiwe Zulu (KwaZulu), HRH Princess Lorna Thibule Raphahlelo, HRH Kgosana Koketso Rakhudu PhD (Bafokeng), HRH Prince Freedom Riba Adv (Ga-Riba)</div></div></div>
+      <div class="session-item"><div class="session-time">16:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Ethiopia-SA Corridor: Linking Regional Longevity Initiatives to elevate Africa's voice on global stages</div><div class="session-speaker"><strong>Dr Tesfahun Admas, PhD</strong> — Neuroscience, Shaggar Institute of Technology (SIT)</div></div></div>
+      <div class="session-item"><div class="session-time">16:20</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Afrolongevity Declaration: From Forum to Movement — A Continental Call to Action</div><div class="session-speaker"><strong>Brenda Ramokopelwa</strong> — Afrolongevity</div></div></div>
+      <div class="session-item"><div class="session-time">16:30</div><div class="session-body"><span class="session-type-badge badge-ceremony">Closing</span><div class="session-title">Final Remarks &amp; Forum Close</div></div></div>
     </div>
   </div>
 </section>
@@ -1273,6 +1323,24 @@
       <div class="speaker-role">Speaker</div>
       <div class="speaker-name">Mr Isaac Makwela</div>
       <div class="speaker-org">South Africa</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781692079/Dr._Koketso_Rakhudu_n0wizj.jpg" alt="Dr. Koketso Rakhudu" loading="lazy"></div>
+      <div class="speaker-role">Traditional Leadership</div>
+      <div class="speaker-name">Dr. Koketso Rakhudu</div>
+      <div class="speaker-org">Royal Bafokeng Nation, Tsitsing <br>South Africa</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781692076/Dr_Cebisa_Mabena_dskvk4.jpg" alt="Dr Cebisa Mabena" loading="lazy"></div>
+      <div class="speaker-role">Speaker</div>
+      <div class="speaker-name">Dr Cebisa Mabena</div>
+      <div class="speaker-org">South Africa</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781692076/Ambassadors_Pule_Malefane_tbwxnk.jpg" alt="Ambassador Pule Malefane" loading="lazy"></div>
+      <div class="speaker-role">Ambassador</div>
+      <div class="speaker-name">Ambassador Pule Malefane</div>
+      <div class="speaker-org">Chairman, Mpho Madi Trust Fund</div>
     </div>
   </div>
   <p class="speakers-notice">More speaker announcements coming soon — follow us for updates</p>
