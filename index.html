@@ -456,6 +456,11 @@
   .speaker-role { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 5px; }
   .speaker-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
   .speaker-org { font-size: 0.76rem; color: var(--gray); }
+  .speaker-bio { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; text-align: left; }
+  .speaker-bio-inner { padding-top: 14px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .speaker-card.bio-open .speaker-bio { max-height: 600px; }
+  .speaker-bio-toggle { background: none; border: none; cursor: pointer; color: var(--green-bright); font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; padding: 4px 0; transition: color 0.2s; }
+  .speaker-bio-toggle:hover { color: var(--white); }
   .speakers-notice { margin-top: 28px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--gray); }
 
   /* ══════════════════════════════════════
@@ -588,6 +593,41 @@
   .accom-alt-link { display: inline-flex; align-items: center; gap: 9px; font-size: 0.82rem; font-weight: 600; color: var(--white); text-decoration: none; border: 1px solid rgba(45,179,96,0.3); border-radius: 8px; padding: 12px 22px; transition: border-color 0.25s, background 0.25s; }
   .accom-alt-link:hover { border-color: var(--green-bright); background: rgba(45,179,96,0.08); }
   .accom-alt-link span { color: var(--green-bright); }
+
+  /* ══════════════════════════════════════
+     POST-EVENT TOUR BAND
+  ══════════════════════════════════════ */
+  .tour-band {
+    background: linear-gradient(135deg, #06351f 0%, #072B5A 55%, #051828 100%);
+    padding: 64px 7%;
+    border-top: 1px solid rgba(45,179,96,0.18);
+    border-bottom: 1px solid rgba(45,179,96,0.18);
+    position: relative; overflow: hidden;
+  }
+  .tour-band::before {
+    content: '🧭'; font-size: 17rem; position: absolute; right: 4%; top: 50%;
+    transform: translateY(-50%) rotate(-12deg); opacity: 0.04; line-height: 1;
+  }
+  .tour-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+  .tour-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-bright); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .tour-eyebrow::before { content: ''; width: 16px; height: 2px; background: var(--green-bright); display: block; }
+  .tour-band-text h3 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; text-transform: uppercase; color: var(--white); line-height: 1.1; }
+  .tour-band-text h3 span { color: var(--green-bright); }
+  .tour-band-text p { font-size: 0.85rem; color: var(--gray); margin-top: 10px; max-width: 480px; line-height: 1.65; }
+  .tour-band-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; flex-shrink: 0; }
+  .tour-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.28); border-radius: 20px; padding: 5px 13px; margin-bottom: 4px; }
+  .tour-note { font-size: 0.72rem; color: var(--gray); max-width: 260px; line-height: 1.5; }
+
+  /* Tour form modal */
+  .tour-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(3,12,24,0.82); backdrop-filter: blur(4px); }
+  .tour-modal.open { display: flex; }
+  .tour-modal-box { background: var(--navy); border: 1px solid rgba(45,179,96,0.25); border-radius: 14px; width: 100%; max-width: 760px; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,0.55); }
+  .tour-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .tour-modal-head h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--white); letter-spacing: 0.04em; }
+  .tour-modal-close { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--white); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; line-height: 1; display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s; flex-shrink: 0; }
+  .tour-modal-close:hover { background: rgba(45,179,96,0.18); border-color: var(--green-bright); }
+  .tour-modal-body { flex: 1; overflow: hidden; background: #fff; }
+  .tour-modal-body iframe { width: 100%; height: 70vh; border: 0; display: block; }
 
   /* ══════════════════════════════════════
      MAIN REGISTER SECTION
@@ -725,6 +765,11 @@
     /* Register */
     .register-actions { flex-direction: column; align-items: center; }
     .btn-white, .btn-outline-white { width: 100%; max-width: 320px; text-align: center; }
+
+    /* Post-event tour */
+    .tour-band-actions { width: 100%; align-items: stretch; }
+    .tour-note { max-width: none; text-align: center; }
+    .tour-modal-body iframe { height: 78vh; }
 
     /* Footer */
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -1103,6 +1148,41 @@
   </div>
 </div>
 
+<!-- MEDIA PARTNERS -->
+<div class="partners-strip">
+  <div class="partners-strip-label">Media Partners</div>
+  <div class="partners-logos">
+    <div class="partner-logo-item">
+      <div class="partner-logo-img-wrap">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/media_partner_bxhhmu.jpg" alt="Media Partner" class="partner-logo-img" loading="lazy">
+      </div>
+    </div>
+    <div class="partner-logo-item">
+      <div class="partner-logo-img-wrap">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Media_partner_1_m4efel.jpg" alt="Media Partner" class="partner-logo-img" loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUPPORTERS -->
+<div class="partners-strip">
+  <div class="partners-strip-label">Supporters</div>
+  <div class="partners-logos">
+    <div class="partner-logo-item">
+      <div class="partner-logo-img-wrap">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Supporter_mteqbu.jpg" alt="Supporter" class="partner-logo-img" loading="lazy">
+      </div>
+    </div>
+    <div class="partner-logo-item">
+      <div class="partner-logo-img-wrap">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782403852/drilldown_xkekcm.png" alt="ASSAf — Academy of Science of South Africa" class="partner-logo-img" loading="lazy">
+      </div>
+      <span class="partner-logo-name">ASSAf</span>
+    </div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-grid">
@@ -1238,7 +1318,7 @@
       <div class="session-item"><div class="session-time">14:50</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Extracting Vitality: The Economic Imperative of Healthspan in Mining Communities</div><div class="session-speaker"><strong>HRH Kgosana Koketso Rakhudu, PhD</strong> — Bafokeng Royal House</div></div></div>
       <div class="session-item"><div class="session-time">15:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">Green Belts &amp; Rehabilitation: Ecosystem Restoration for Community Health Focus</div><div class="session-speaker"><strong>Prince Freedom Riba, Adv</strong> — Ga-Riba Royal House</div></div></div>
       <div class="session-item"><div class="session-time">15:10</div><div class="session-body"><span class="session-type-badge badge-panel">Royal Desk Panel</span><div class="session-title">Sovereign Stewardship: The Royal Role in Land, Indigenous Knowledge, and the Health Economy</div><div class="session-speaker">Facilitated by <strong>Heru Thabo Matsafu</strong> · Panellists: HRH Princess Thandiwe Zulu (KwaZulu), HRH Princess Lorna Thibule Raphahlelo, HRH Kgosana Koketso Rakhudu PhD (Bafokeng), HRH Prince Freedom Riba Adv (Ga-Riba)</div></div></div>
-      <div class="session-item"><div class="session-time">16:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Ethiopia-SA Corridor: Linking Regional Longevity Initiatives to elevate Africa's voice on global stages</div><div class="session-speaker"><strong>Dr Tesfahun Admas, PhD</strong> — Neuroscience, Shaggar Institute of Technology (SIT)</div></div></div>
+      <div class="session-item"><div class="session-time">16:00</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Ethiopia-SA Corridor: Linking Regional Longevity Initiatives to elevate Africa's voice on global stages</div><div class="session-speaker"><strong>Dr Tesfahun Admasu, PhD</strong> — Neuroscience, Shaggar Institute of Technology (SIT)</div></div></div>
       <div class="session-item"><div class="session-time">16:20</div><div class="session-body"><span class="session-type-badge badge-pres">Presentation</span><div class="session-title">The Afrolongevity Declaration: From Forum to Movement — A Continental Call to Action</div><div class="session-speaker"><strong>Brenda Ramokopelwa</strong> — Afrolongevity</div></div></div>
       <div class="session-item"><div class="session-time">16:30</div><div class="session-body"><span class="session-type-badge badge-ceremony">Closing</span><div class="session-title">Final Remarks &amp; Forum Close</div></div></div>
     </div>
@@ -1341,6 +1421,32 @@
       <div class="speaker-role">Ambassador</div>
       <div class="speaker-name">Ambassador Pule Malefane</div>
       <div class="speaker-org">Chairman, Mpho Madi Trust Fund</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402783/Princess_Thibule_Motsotho_Lorna_Raphahlele_ez22st.jpg" alt="Princess Thibule Mosotho Lorna Raphahlelo" loading="lazy"></div>
+      <div class="speaker-role">Royal Legacy Desk</div>
+      <div class="speaker-name">Princess Thibule Mosotho Lorna Raphahlelo</div>
+      <div class="speaker-org">Pan African Tourism Board — Royal Legacy Desk</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Prof_Maurine_Musie_kggdux.jpg" alt="Prof Maurine Musie" loading="lazy"></div>
+      <div class="speaker-role">Academia</div>
+      <div class="speaker-name">Prof Maurine Musie</div>
+      <div class="speaker-org">University of Pretoria <br>South Africa</div>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Dr._Tesfahun_Admasu_lh34vn.jpg" alt="Dr. Tesfahun Admasu" loading="lazy"></div>
+      <div class="speaker-role">Immuno-Oncology & Aging Biology</div>
+      <div class="speaker-name">Dr. Tesfahun Admasu, PhD</div>
+      <div class="speaker-org">Project Scientist in Immuno-Oncology, Cedars-Sinai Medical Center · Head of Biotechnology, Shaggar Institute of Technology</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">Dr. Tesfahun Admasu is a Project Scientist in Immuno-Oncology at Cedars-Sinai Medical Center in Los Angeles and Head of the Department of Biotechnology at the Shaggar Institute of Technology. His research bridges cancer immunotherapy and aging biology, with a focus on tumor microenvironment remodeling, cellular senescence, and T-cell co-stimulation. He holds a Ph.D. in Biochemistry from the National University of Singapore and has published in leading scientific journals, including <em>Science Advances</em>, <em>Cell Reports</em>, and <em>Developmental Cell</em>.</div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Dr_Gauta_Gold_Matlou_baoglp.jpg" alt="Dr Gauta Gold Matlou" loading="lazy"></div>
+      <div class="speaker-role">Speaker</div>
+      <div class="speaker-name">Dr Gauta Gold Matlou</div>
+      <div class="speaker-org">Sefako Makgatho Health Sciences University <br>South Africa</div>
     </div>
   </div>
   <p class="speakers-notice">More speaker announcements coming soon — follow us for updates</p>
@@ -1503,6 +1609,38 @@
   </div>
 </section>
 
+<!-- POST-EVENT TOUR -->
+<section class="tour-band" id="tour">
+  <div class="tour-band-inner">
+    <div class="tour-band-text">
+      <div class="tour-eyebrow">Exclusive Experience</div>
+      <h3>Post-Event <span>Tour</span></h3>
+      <p>Extend your stay with a curated post-event tour exploring the heritage, biodiversity and longevity landscapes of the City of Tshwane. <strong>Limited slots available — open to registered participants and delegates only.</strong></p>
+    </div>
+    <div class="tour-band-actions">
+      <span class="tour-badge">⏳ Limited Slots</span>
+      <button type="button" class="btn-ticket" onclick="openTourForm()">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        Reserve Your Tour Slot
+      </button>
+      <span class="tour-note">Registered delegates only · Slots confirmed on a first-come, first-served basis.</span>
+    </div>
+  </div>
+</section>
+
+<!-- POST-EVENT TOUR FORM MODAL -->
+<div class="tour-modal" id="tour-modal" role="dialog" aria-modal="true" aria-labelledby="tour-modal-title" onclick="if(event.target===this)closeTourForm()">
+  <div class="tour-modal-box">
+    <div class="tour-modal-head">
+      <h4 id="tour-modal-title">Post-Event Tour Registration</h4>
+      <button type="button" class="tour-modal-close" aria-label="Close" onclick="closeTourForm()">&times;</button>
+    </div>
+    <div class="tour-modal-body">
+      <iframe id="tour-form-frame" data-src="https://forms.gle/XpQSwdUobdwWPeDV7" title="Post-Event Tour Registration Form" loading="lazy">Loading…</iframe>
+    </div>
+  </div>
+</div>
+
 <!-- REGISTER CTA -->
 <section class="register" id="register">
   <div class="register-content">
@@ -1636,6 +1774,30 @@
     document.getElementById(day).classList.add('active');
     btn.classList.add('active');
   }
+
+  // ── Speaker bio expand/collapse
+  function toggleSpeakerBio(btn) {
+    const card = btn.closest('.speaker-card');
+    const open = card.classList.toggle('bio-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'Read less ↑' : 'Read more ↓';
+  }
+
+  // ── Post-event tour form modal
+  function openTourForm() {
+    const modal = document.getElementById('tour-modal');
+    const frame = document.getElementById('tour-form-frame');
+    if (frame && !frame.src && frame.dataset.src) frame.src = frame.dataset.src; // lazy-load on first open
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTourForm() {
+    document.getElementById('tour-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeTourForm();
+  });
 
   // ── Mobile nav
   const ham = document.getElementById('hamburger');
