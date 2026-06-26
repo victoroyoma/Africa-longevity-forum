@@ -458,7 +458,13 @@
   .speaker-org { font-size: 0.76rem; color: var(--gray); }
   .speaker-bio { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; text-align: left; }
   .speaker-bio-inner { padding-top: 14px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
-  .speaker-card.bio-open .speaker-bio { max-height: 600px; }
+  .speaker-bio-inner a { color: var(--green-bright); text-decoration: none; }
+  .speaker-bio-inner a:hover { text-decoration: underline; }
+  .speaker-card.bio-open .speaker-bio { max-height: 3400px; }
+  .speaker-bio-inner p { margin-bottom: 9px; }
+  .speaker-bio-inner p:last-child { margin-bottom: 0; }
+  .speaker-bio-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-bright); display: block; margin: 12px 0 4px; }
+  .speaker-bio-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; }
   .speaker-bio-toggle { background: none; border: none; cursor: pointer; color: var(--green-bright); font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; padding: 4px 0; transition: color 0.2s; }
   .speaker-bio-toggle:hover { color: var(--white); }
   .speakers-notice { margin-top: 28px; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--gray); }
@@ -587,6 +593,18 @@
   .accom-shuttle-row { display: flex; align-items: baseline; gap: 12px; font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
   .accom-shuttle-row strong { color: var(--white); font-weight: 600; }
   .accom-pickup { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--green-bright); line-height: 1; }
+  .shuttle-toggle { align-self: flex-start; background: rgba(45,179,96,0.12); color: var(--green-bright); border: 1px solid rgba(45,179,96,0.3); border-radius: 6px; padding: 9px 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+  .shuttle-toggle:hover { background: rgba(45,179,96,0.2); border-color: var(--green-bright); }
+  .shuttle-collapse { max-height: 0; overflow: hidden; transition: max-height 0.55s ease; }
+  .shuttle-collapse.open { max-height: 1400px; }
+  .shuttle-day { padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .shuttle-day:first-child { padding-top: 6px; margin-top: 6px; border-top: none; }
+  .shuttle-day-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--white); }
+  .shuttle-day-note { font-size: 0.72rem; font-weight: 600; color: var(--green-bright); margin-top: 2px; }
+  .shuttle-leg-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin: 12px 0 5px; }
+  .shuttle-stop { display: flex; gap: 12px; font-size: 0.82rem; color: var(--gray); line-height: 1.55; padding: 3px 0; }
+  .shuttle-stop-time { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--green-bright); min-width: 62px; flex-shrink: 0; }
+  .shuttle-stop-place strong { color: rgba(255,255,255,0.9); font-weight: 600; }
   .accom-alt { margin-top: 36px; text-align: center; }
   .accom-alt-intro { font-size: 0.9rem; color: var(--gray); line-height: 1.7; max-width: 640px; margin: 0 auto 20px; }
   .accom-alt-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
@@ -628,6 +646,32 @@
   .tour-modal-close:hover { background: rgba(45,179,96,0.18); border-color: var(--green-bright); }
   .tour-modal-body { flex: 1; overflow: hidden; background: #fff; }
   .tour-modal-body iframe { width: 100%; height: 70vh; border: 0; display: block; }
+
+  /* ══════════════════════════════════════
+     POST-TOUR ITINERARY
+  ══════════════════════════════════════ */
+  .itinerary { background: var(--navy); padding: 80px 7%; }
+  .itin-toggle-wrap { text-align: center; margin-top: 28px; }
+  .itin-toggle { background: transparent; color: var(--white); padding: 13px 30px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 3px; border: 2px solid rgba(45,179,96,0.5); cursor: pointer; transition: all 0.2s; }
+  .itin-toggle:hover { border-color: var(--green-bright); background: rgba(45,179,96,0.08); transform: translateY(-2px); }
+  .itin-collapse { max-height: 0; overflow: hidden; transition: max-height 0.55s ease; }
+  .itinerary.open .itin-collapse { max-height: 6000px; }
+  .itin-wrap { max-width: 920px; margin: 44px auto 0; }
+  .itin-item { display: grid; grid-template-columns: 110px 1fr; gap: 26px; padding: 26px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+  .itin-item:first-child { border-top: none; }
+  .itin-time { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--green-bright); line-height: 1.25; }
+  .itin-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: var(--white); line-height: 1.2; }
+  .itin-phase { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.28); border-radius: 20px; padding: 4px 11px; margin-bottom: 8px; }
+  .itin-desc { font-size: 0.86rem; color: var(--gray); line-height: 1.7; margin-top: 8px; }
+  .itin-desc em { color: rgba(255,255,255,0.82); font-style: italic; }
+  .itin-subgroup { margin-top: 16px; border-left: 2px solid rgba(45,179,96,0.3); padding-left: 18px; display: flex; flex-direction: column; gap: 16px; }
+  .itin-subitem-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 4px; }
+  .itin-subitem p { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+  .itin-subitem p + p { margin-top: 5px; }
+  .itin-quote { font-style: italic; color: rgba(255,255,255,0.82); }
+  .itin-foot { max-width: 920px; margin: 36px auto 0; text-align: center; font-size: 0.86rem; color: var(--gray); line-height: 1.7; }
+  .itin-foot a { color: var(--green-bright); text-decoration: none; }
+  .itin-foot a:hover { text-decoration: underline; }
 
   /* ══════════════════════════════════════
      MAIN REGISTER SECTION
@@ -770,6 +814,8 @@
     .tour-band-actions { width: 100%; align-items: stretch; }
     .tour-note { max-width: none; text-align: center; }
     .tour-modal-body iframe { height: 78vh; }
+    .itin-item { grid-template-columns: 1fr; gap: 8px; }
+    .itin-time { font-size: 0.95rem; }
 
     /* Footer */
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -1358,9 +1404,21 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1780894741/dalvi_ud6ban.jpg" alt="Dr Salmaan Dalvi" loading="lazy"></div>
-      <div class="speaker-role">Regenerative Medicine</div>
-      <div class="speaker-name">Dr Salmaan Dalvi</div>
-      <div class="speaker-org">CEO, RCMRegistry & Global Regenerative Medicine Society; former Chapter Head, UK GICTC <br>UK</div>
+      <div class="speaker-role">Regenerative Medicine & Longevity</div>
+      <div class="speaker-name">Dr Salmaan Dalvi, PhD</div>
+      <div class="speaker-org">Founder & Executive Chairman, RCMR · Founder & CEO, CATRDR <br>United Kingdom</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">
+        <span class="speaker-bio-label">Roles</span>
+        <p>Founder &amp; Executive Chairman, Regenerative and Cellular Medicine Registry (RCMR) · Founder &amp; CEO, Clinical &amp; Advanced Therapies for Rare Diseases Registry (CATRDR) · Advisor to the Director General, East, Central and Southern Africa Health Community (ECSA-HC) · Vice Chairman, Health Sector, CS Network / Connect Souq.</p>
+        <span class="speaker-bio-label">Biography</span>
+        <p>Dr Salmaan Dalvi is an internationally recognised healthcare strategist, regenerative medicine specialist, longevity advocate, and global health systems leader whose work focuses on the convergence of longevity science, regenerative medicine, biological infrastructure, and health system transformation. His career spans more than 41 years in the health sector — encompassing healthcare delivery, diagnostics, transplantation, regenerative and cellular medicine, rare diseases, biological infrastructure, public health, and international healthcare development.</p>
+        <p>He serves as Founder and Executive Chairman of the <strong>Regenerative and Cellular Medicine Registry (RCMR)</strong>, a UK-based health systems infrastructure organisation dedicated to advancing disease intelligence, precision diagnostics, regenerative and cellular therapies, treatment accessibility, biological infrastructure, workforce development, healthy ageing, and innovative healthcare solutions that improve outcomes across diverse populations. He is also Founder and CEO of the <strong>Clinical &amp; Advanced Therapies for Rare Diseases Registry (CATRDR)</strong>, an international initiative focused on improving the identification, diagnosis, management, research, and treatment of rare, genetic, and complex diseases through integrated data systems, advanced therapies, international collaboration, and equitable access to healthcare innovation.</p>
+        <p>Widely recognised for his work in regenerative medicine and healthcare innovation, Dr Dalvi has contributed to initiatives spanning stem cell transplantation, donor registries, cord blood banking, transfusion medicine, diagnostics, cellular therapies, precision medicine, and health system strengthening. He is particularly known for advocating the concept of <strong>Biological Infrastructure</strong> — the strategic integration of registries, diagnostics, biobanks, genomic and cellular technologies, advanced therapies, digital health platforms, and treatment access systems to create sustainable and future-ready healthcare ecosystems.</p>
+        <p>As Advisor to the Director General of the <strong>ECSA-HC</strong>, an intergovernmental organisation serving more than 300 million people, he contributes to regional and international dialogue on healthcare innovation, workforce development, diagnostics, regenerative medicine, healthy ageing, disease prevention, and health system strengthening. A passionate advocate for longevity science and healthy ageing, he promotes a systems-based approach combining prevention, precision diagnostics, regenerative medicine, advanced therapeutics, biological preparedness, and equitable access to innovation — believing the future of healthcare must focus not only on extending lifespan but also on improving <em>healthspan</em>.</p>
+        <p>As Vice Chairman of the Health Sector for CS Network / Connect Souq, he supports international collaboration across healthcare, life sciences, biotechnology, technology, education, investment, industry, and government, facilitating partnerships that drive innovation, knowledge exchange, and sustainable economic development. Throughout his career he has worked with governments, ministries of health, academic institutions, healthcare providers, patient organisations, industry leaders, investors, and international agencies, driven by a commitment to resilient, inclusive, and patient-centred healthcare systems that bridge science, technology, policy, and clinical practice.</p>
+        <p>Today his work focuses on integrated health infrastructure connecting disease intelligence, precision diagnostics, biological banking, regenerative medicine, advanced therapies, treatment access, and longevity science into coherent, sustainable systems. He currently leads international initiatives across the United Kingdom, Africa, and Asia exploring the intersection of longevity science, regenerative medicine, biological infrastructure, and health system resilience — with a particular focus on improving healthspan and expanding equitable access to future healthcare innovation for populations across Africa, Asia, and the wider Global Ethnic Majority.</p>
+      </div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1780224389/ilsf_1_guz9dn.jpg" alt="Osinakachi Akuma Kalu" loading="lazy"></div>
@@ -1382,9 +1440,22 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781165057/David_Morrison_PhD_ratlkb.jpg" alt="David Morrison PhD" loading="lazy"></div>
-      <div class="speaker-role">Biochemistry</div>
+      <div class="speaker-role">Anti-Aging & Longevity Biotech</div>
       <div class="speaker-name">David Morrison, PhD</div>
       <div class="speaker-org">Founder & CEO, Bio Nova Veritas / Nova Vita Biochemicals</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">
+        <p>Anti-aging and longevity researcher with a strong focus on biotechnology entrepreneurship. Expertise in recombinant expression, purification, and scale-up of enzymes, proteins, and peptides for pharmaceutical, vaccine, and cosmetic applications. Founder of <strong>Bio Nova Veritas</strong> (operating as Nova Vita Biochemicals), advancing a multi-stage pipeline of personalized anti-aging solutions.</p>
+        <p>Originally from Durban and schooled in the Natal Midlands, with a passion for integrating commerce and science to commercialize biotechnological advances. Holding degrees in Commerce and Science (Rhodes University), he completed an MSc in Biochemistry investigating enzyme synergy for lignocellulosic waste degradation toward biofuel production. Following work at the CSIR, he earned a PhD in Medical Biochemistry through UCT, developing heterologous recombinant systems for peptidylglycine α-amidating monooxygenase to enable biosimilar α-amidated peptide production. Postdoctoral research at Stellenbosch University (Biofoundry) focused on yeast-based recombinant enzyme scale-up and purification for mRNA vaccine production under GMP-like conditions.</p>
+        <p>As founder and CEO of Bio Nova Veritas / Nova Vita Biochemicals, he is advancing anti-aging and longevity solutions through personalized genetic/RNA testing, AI-guided interventions, repurposed compounds, and novel recombinant peptides/proteins aimed at epigenetic reprogramming and healthspan extension. He has informally mentored numerous students, delivered bioprocessing courses for UVU Bio's accelerator, and maintains active consulting in bioprocess optimization and regulatory compliance.</p>
+        <span class="speaker-bio-label">Research Interests</span>
+        <p>Anti-aging, longevity, cosmetics, protein and peptide engineering, recombinant protein expression in <em>E. coli</em> and multiple yeast species, protein purification, enzyme activity assays, and peptide production.</p>
+        <div class="speaker-bio-links">
+          <a href="https://scholar.google.com/citations?user=S29TessAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Google Scholar</a>
+          <a href="https://orcid.org/0000-0003-0230-1408" target="_blank" rel="noopener">🆔 ORCID</a>
+          <a href="https://www.linkedin.com/in/david-morrison-phd-abb48416/" target="_blank" rel="noopener">💼 LinkedIn</a>
+        </div>
+      </div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781165057/Princess_Thandiwe_Zulu_lvzobt.jpg" alt="Princess Thandiwe Zulu" loading="lazy"></div>
@@ -1412,15 +1483,19 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781692076/Dr_Cebisa_Mabena_dskvk4.jpg" alt="Dr Cebisa Mabena" loading="lazy"></div>
-      <div class="speaker-role">Speaker</div>
+      <div class="speaker-role">Traditional Healer & Iridologist</div>
       <div class="speaker-name">Dr Cebisa Mabena</div>
-      <div class="speaker-org">South Africa</div>
+      <div class="speaker-org">Founder, Mothong African Heritage <br>South Africa</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">Dr Ephraim Cebisa Mabena is a qualified Iridologist and Traditional Healer with an immense interest in the environment and its preservation. In 2001, driven by his ancestral spiritual connection, he formed <strong>Mothong African Heritage</strong>, a Non-Profit Organisation. He rehabilitated a section of the Magaliesberg, transforming it into a tourist attraction boosted by its heritage of Nature Conservation. Mothong also functions as an institution that educates people about biodiversity and Indigenous Knowledge Systems. In 2011, Dr Mabena collaborated with the Ministry of External Affairs of the Indian government to create India-Africa workshops to share practical experiences, information, and expertise on Traditional Medicine. In June 2013, he was a founding signatory to the Indigenous Knowledge Systems' Bioprospecting and Product Development Platform in Pretoria — an initiative driven by the Department of Science and Innovation (DSI) and the Council for Scientific and Industrial Research (CSIR). As a traditional healer, Dr Mabena firmly believes that the Environment is the giver of life, and that all Traditional Knowledge relating to human and animal life is strongly embedded in nature and can be accessed within the Environment.</div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1781692076/Ambassadors_Pule_Malefane_tbwxnk.jpg" alt="Ambassador Pule Malefane" loading="lazy"></div>
       <div class="speaker-role">Ambassador</div>
       <div class="speaker-name">Ambassador Pule Malefane</div>
       <div class="speaker-org">Chairman, Mpho Madi Trust Fund</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">Ambassador Pule Malefane is the <strong>Chairman of the Mpho Madi Trust Fund</strong>, whose objective is to provide support for children born without limbs. He is also the <strong>Secretary of Kutlwano Social Organization</strong> — established in 1992 with 90 male members — whose objective is to coordinate and support community development and empowerment.<br><br>📧 <a href="mailto:malefanepi@gmail.com">malefanepi@gmail.com</a> · 🌐 <a href="https://www.kutlwano.org" target="_blank" rel="noopener">www.kutlwano.org</a></div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402783/Princess_Thibule_Motsotho_Lorna_Raphahlele_ez22st.jpg" alt="Princess Thibule Mosotho Lorna Raphahlelo" loading="lazy"></div>
@@ -1444,9 +1519,11 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Dr_Gauta_Gold_Matlou_baoglp.jpg" alt="Dr Gauta Gold Matlou" loading="lazy"></div>
-      <div class="speaker-role">Speaker</div>
+      <div class="speaker-role">Nanomedicine & Drug Delivery</div>
       <div class="speaker-name">Dr Gauta Gold Matlou</div>
-      <div class="speaker-org">Sefako Makgatho Health Sciences University <br>South Africa</div>
+      <div class="speaker-org">Senior Scientist, Sefako Makgatho Health Sciences University · Co-Chair, SAYAS <br>South Africa</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">Dr Gauta Gold Matlou is the current <strong>Co-Chair of the South African Young Academy of Science (SAYAS)</strong> and works as a senior scientist at the Sefako Makgatho Health Sciences University. He is an NRF-rated chemist specialising in nanomedicine and advanced drug-delivery systems. His research focuses on developing metallic nanoparticle-based drug carriers and photoactive dyes to improve targeted cancer therapies — aiming to enhance treatment effectiveness while reducing side effects associated with conventional therapies. He is an alumnus of the Mail &amp; Guardian Top 200 Young South Africans, the Lindau Nobel Laureate Meetings, and the Hult-Prize global entrepreneurship programme.</div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
   </div>
   <p class="speakers-notice">More speaker announcements coming soon — follow us for updates</p>
@@ -1590,11 +1667,35 @@
     </div>
 
     <div class="accom-shuttle-box">
-      <div class="accom-name">🚌 Free Daily Shuttle</div>
-      <div class="accom-shuttle-row">A <strong>free daily shuttle service (Tshwane Bus)</strong> will run from the hotel to the event each morning and back in the afternoon.</div>
-      <div>
-        <div class="accom-shuttle-row" style="margin-bottom:4px;">Morning pick-up time</div>
-        <div class="accom-pickup">6h45</div>
+      <div class="accom-name">🚌 Free Daily Shuttle (Tshwane Bus)</div>
+      <div class="accom-shuttle-row">A free daily shuttle runs on the <strong>2 Conference Days</strong> (registered delegates) and on the <strong>Tour Day</strong> (confirmed tour delegates only).</div>
+      <button type="button" class="shuttle-toggle" onclick="toggleShuttle(this)" aria-expanded="false">View Shuttle Schedule ↓</button>
+      <div class="shuttle-collapse">
+
+        <div class="shuttle-day">
+          <div class="shuttle-day-title">Conference Days</div>
+          <div class="shuttle-day-note">29 – 30 June · Registered delegates</div>
+          <div class="shuttle-leg-label">Morning</div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">06h45</span><span class="shuttle-stop-place">Pick-up at <strong>Tshwane House</strong>, Pretoria</span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">07h15</span><span class="shuttle-stop-place">Pick-up at <strong>Soshanguve Hotel</strong></span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">07h45</span><span class="shuttle-stop-place">Drop-off at <strong>SMU</strong></span></div>
+          <div class="shuttle-leg-label">Afternoon</div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">17h00</span><span class="shuttle-stop-place">Pick-up at <strong>Sefako Makgatho University</strong></span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">Drop-off</span><span class="shuttle-stop-place"><strong>Soshanguve Hotel</strong> &amp; <strong>Tshwane House</strong></span></div>
+        </div>
+
+        <div class="shuttle-day">
+          <div class="shuttle-day-title">Tour Day</div>
+          <div class="shuttle-day-note">Confirmed tour delegates only</div>
+          <div class="shuttle-leg-label">Morning</div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">08h00</span><span class="shuttle-stop-place">Pick-up at <strong>Sefako Makgatho University</strong></span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">08h15</span><span class="shuttle-stop-place">Pick-up at <strong>Soshanguve Hotel</strong></span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">08h30</span><span class="shuttle-stop-place">Pick-up at <strong>Tshwane House</strong></span></div>
+          <div class="shuttle-leg-label">Afternoon</div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">16h00</span><span class="shuttle-stop-place">Drop-off at <strong>Tshwane House</strong></span></div>
+          <div class="shuttle-stop"><span class="shuttle-stop-time">16h30</span><span class="shuttle-stop-place">Drop-off at <strong>Sefako Makgatho University</strong> / <strong>Soshanguve Hotel</strong></span></div>
+        </div>
+
       </div>
     </div>
 
@@ -1625,6 +1726,92 @@
       </button>
       <span class="tour-note">Registered delegates only · Slots confirmed on a first-come, first-served basis.</span>
     </div>
+  </div>
+</section>
+
+<!-- POST-TOUR ITINERARY -->
+<section class="itinerary" id="tour-itinerary">
+  <div class="section-label">Post-Event Tour</div>
+  <h2 class="section-title">Tour <em>Itinerary</em></h2>
+  <div class="itin-toggle-wrap">
+    <button type="button" class="itin-toggle" onclick="toggleItinerary(this)" aria-expanded="false" aria-controls="itin-collapse">View Full Itinerary ↓</button>
+  </div>
+  <div class="itin-collapse" id="itin-collapse">
+  <div class="itin-wrap">
+
+    <div class="itin-item">
+      <div class="itin-time">08h00</div>
+      <div class="itin-body">
+        <div class="itin-title">Pick-Up at Sefako Makgatho University</div>
+      </div>
+    </div>
+
+    <div class="itin-item">
+      <div class="itin-time">08h30</div>
+      <div class="itin-body">
+        <div class="itin-title">Tshwane House</div>
+      </div>
+    </div>
+
+    <div class="itin-item">
+      <div class="itin-time">09h00 – 11h00</div>
+      <div class="itin-body">
+        <span class="itin-phase">Phase 1 · 2 Hours</span>
+        <div class="itin-title">University of Pretoria — UP Pathways to Afro Longevity</div>
+        <p class="itin-desc">This two-hour tour gives delegates a concise but powerful journey through African science, ancestral knowledge, ecological systems, and cultural heritage — showing how these elements collectively shape the continent's vision for healthy longevity.</p>
+        <div class="itin-subgroup">
+          <div class="itin-subitem">
+            <div class="itin-subitem-label">Afro Longevity Research Overview</div>
+            <p><strong>Welcome — Prof Sunil Maharaj</strong>, Vice-Principal: Research and Postgraduate Studies. Sets the scene, positioning AfroLongevity at the intersection of African science, cultural wisdom, and environmental knowledge that supports longer, healthier lives.</p>
+          </div>
+          <div class="itin-subitem">
+            <div class="itin-subitem-label">Practical Link to Forum Presentations — Secrets of Aging &amp; Indigenous Knowledge Systems</div>
+            <p class="itin-quote">"UP researchers close in on the secret to aging" — Prof Nigel Bennett &amp; Dr Daniel Hart</p>
+            <p class="itin-quote">"From ancient wisdom flows modern water solutions" — Prof Innocent Pikirayi</p>
+          </div>
+          <div class="itin-subitem">
+            <div class="itin-subitem-label">Longevity Snack Break (20 min)</div>
+            <p>Department of Food and Consumer Sciences snack/drink inspired by African wellness ingredients (e.g. baobab, moringa, rooibos).</p>
+          </div>
+          <div class="itin-subitem">
+            <div class="itin-subitem-label">Longevity-Focused Campus Tours (1 Hour)</div>
+            <p><strong>Botanical Gardens — Jason Sampson:</strong> explores African medicinal plants, biodiversity, and the link between ecological health and human wellbeing.</p>
+            <p><strong>Mapungubwe Collection — UP Museums:</strong> reveals how ancient African civilisations practiced sustainable living, wellbeing, and community resilience — historic models of longevity.</p>
+          </div>
+          <div class="itin-subitem">
+            <div class="itin-subitem-label">Phase 2 — Mamelodi Township Immersion</div>
+            <p>A township too rich to be ignored.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="itin-item">
+      <div class="itin-time">12h15 – 13h30</div>
+      <div class="itin-body">
+        <div class="itin-title">Mothong African Heritage Site Visit</div>
+        <p class="itin-desc">A blooming good story: as a traditional healer, Dr Ephraim Mabena has made it onto the "Science Oscars" for turning a dumpsite into a botanical garden. The site is part of the UNESCO-recognised Magaliesberg Biosphere and the pride and joy of Mamelodi.</p>
+      </div>
+    </div>
+
+    <div class="itin-item">
+      <div class="itin-time">14h00 – 15h30</div>
+      <div class="itin-body">
+        <div class="itin-title">Complimentary Lunch</div>
+        <p class="itin-desc"><strong>Maximizing Benefits Through Community-Based Tourism.</strong></p>
+      </div>
+    </div>
+
+    <div class="itin-item">
+      <div class="itin-time">16h30</div>
+      <div class="itin-body">
+        <div class="itin-title">Drop-Off</div>
+        <p class="itin-desc">Sefako Makgatho University · Soshanguve Hotel · City of Tshwane.</p>
+      </div>
+    </div>
+
+  </div>
+  <p class="itin-foot">Visit <a href="https://www.discovertshwane.com" target="_blank" rel="noopener">www.discovertshwane.com</a> for more exciting experiences!</p>
   </div>
 </section>
 
@@ -1798,6 +1985,22 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeTourForm();
   });
+
+  // ── Post-tour itinerary expand/collapse
+  function toggleItinerary(btn) {
+    const section = btn.closest('.itinerary');
+    const open = section.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'Hide Itinerary ↑' : 'View Full Itinerary ↓';
+  }
+
+  // ── Shuttle schedule expand/collapse
+  function toggleShuttle(btn) {
+    const panel = btn.nextElementSibling;
+    const open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'Hide Shuttle Schedule ↑' : 'View Shuttle Schedule ↓';
+  }
 
   // ── Mobile nav
   const ham = document.getElementById('hamburger');
