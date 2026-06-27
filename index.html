@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Africa Longevity Forum 2026 | Advancing Economic Power Through Integrated Health Resilience</title>
-<meta name="description" content="Africa Longevity Forum 2026 — a premier two-day forum on longevity science, AI-driven healthcare, biotechnology, policy and investment. 29–30 June 2026, Sefako Makgatho Health Sciences University, Tshwane, South Africa.">
+<meta name="description" content="Africa Longevity Forum 2026 — a premier hybrid forum on longevity science, AI-driven healthcare, biotechnology, policy and investment. Free registration required. In person 29 June & online via Zoom 30 June 2026, Sefako Makgatho Health Sciences University, Tshwane, South Africa.">
 <meta name="theme-color" content="#041e3a">
 <meta name="author" content="AFROLONGEVITY · ILSA · TAFFD's">
 <link rel="canonical" href="https://conference.taffds.org/">
@@ -13,7 +13,7 @@
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Africa Longevity Forum 2026">
-<meta property="og:description" content="Advancing Economic Power Through Integrated Health Resilience. 29–30 June 2026 · Tshwane, South Africa.">
+<meta property="og:description" content="Advancing Economic Power Through Integrated Health Resilience. Free hybrid event — in person 29 June & online via Zoom 30 June 2026 · Tshwane, South Africa. Registration required.">
 <meta property="og:url" content="https://conference.taffds.org/">
 <meta property="og:site_name" content="Africa Longevity Forum">
 <meta property="og:image" content="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1771663955/afrolong_vtqs0q.jpg">
@@ -367,6 +367,10 @@
     background: #f3f1e8;
     border-radius: 0 8px 8px 0;
   }
+  .day-format { display: inline-flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 6px; padding: 8px 15px; margin-bottom: 16px; }
+  .day-format.in-person { color: #0e5c28; background: rgba(45,179,96,0.14); border: 1px solid rgba(45,179,96,0.35); }
+  .day-format.online { color: #0b6b78; background: rgba(0,170,200,0.12); border: 1px solid rgba(0,170,200,0.32); }
+  .day-format a { color: inherit; text-decoration: underline; }
   .prog-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 28px; }
   .prog-legend-item { display: inline-flex; align-items: center; gap: 7px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark); }
   .prog-legend-dot { width: 10px; height: 10px; border-radius: 3px; }
@@ -872,7 +876,7 @@
   }
   .partners-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 28px 24px;
     align-items: stretch;
     justify-items: center;
@@ -892,7 +896,7 @@
     padding: 24px 18px 14px 18px;
     min-width: 0;
     width: 100%;
-    max-width: 200px;
+    max-width: 240px;
     box-shadow: 0 2px 12px rgba(45,179,96,0.04);
     transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.18s;
     cursor: pointer;
@@ -909,12 +913,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 104px;
     width: 100%;
     margin-bottom: 14px;
     background: #fff;
     border-radius: 8px;
-    padding: 6px 8px;
+    padding: 12px 14px;
     box-shadow: 0 1px 6px rgba(45,179,96,0.06);
   }
   /* Dark tile for white/transparent logos (e.g. ILSA) so they stay visible */
@@ -922,10 +926,13 @@
     background: var(--navy-mid);
     box-shadow: inset 0 0 0 1px rgba(45,179,96,0.18);
   }
+  /* Full-bleed banner logos: image fills the tile, padding removed; tile bg matches the logo's background (set inline) */
+  .partner-logo-img-wrap.wrap-fill { padding: 0; overflow: hidden; }
+  .wrap-fill .partner-logo-img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; }
   .partner-logo-img {
-    max-height: 64px;
+    max-height: 80px;
     width: auto;
-    max-width: 120px;
+    max-width: 100%;
     object-fit: contain;
     display: block;
     filter: none;
@@ -957,9 +964,9 @@
 
   @media (max-width: 640px) {
     .partners-logos { gap: 14px; }
-    .partner-logo-item { min-width: 140px; padding: 22px 20px 14px; }
-    .partner-logo-img { max-height: 60px; }
-    .partner-logo-img-wrap { height: 60px; }
+    .partner-logo-item { min-width: 150px; padding: 22px 20px 14px; }
+    .partner-logo-img { max-height: 72px; }
+    .partner-logo-img-wrap { height: 90px; }
   }
 
   /* ══════════════════════════════════════
@@ -1037,7 +1044,7 @@
     <li><a href="#speakers">Speakers</a></li>
     <li><a href="#venue">Venue</a></li>
     <li><a href="#accommodation">Stay</a></li>
-    <li><a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="nav-cta">Get Tickets</a></li>
+    <li><a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="nav-cta">Register Free</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span><span></span>
@@ -1054,14 +1061,14 @@
   <a href="#venue" class="mob-link">Venue</a>
   <a href="#accommodation" class="mob-link">Accommodation</a>
   <a href="#sponsorship" class="mob-link">Sponsorship</a>
-  <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="mob-cta mob-link">🎟 Get Tickets</a>
+  <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="mob-cta mob-link">✓ Register Free</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-left">
-    <div class="hero-eyebrow fade-in">Official Conference — 29 & 30 June 2026</div>
+    <div class="hero-eyebrow fade-in">Official Hybrid Conference — 29 & 30 June 2026 · Free Registration</div>
     <h1 class="hero-title fade-in delay-1">
       LONGEVITY<br>
       <span class="word-longevity">SCIENCE</span>
@@ -1089,11 +1096,21 @@
           <span class="meta-sub">Garankuwa, Tshwane, South Africa</span>
         </div>
       </div>
+      <div class="hero-meta-item">
+        <div class="meta-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zm-5-7l-6 4V8l6 2z"/></svg>
+        </div>
+        <div>
+          <span class="meta-label">Format</span>
+          <span class="meta-value">In Person (Day 1) · Online via Zoom (Day 2)</span>
+          <span class="meta-sub">Free — registration required for both days</span>
+        </div>
+      </div>
     </div>
     <div class="hero-actions fade-in delay-4">
       <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="btn-ticket">
-        <svg viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2z"/></svg>
-        Buy Tickets Now
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Register Free
       </a>
       <a href="#program" class="btn-outline">View Program</a>
     </div>
@@ -1121,8 +1138,8 @@
         </div>
       </div>
       <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="btn-ticket card-ticket-btn" style="margin-top:4px;font-size:0.8rem;padding:12px 20px;">
-        <svg viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2z"/></svg>
-        Register on Quicket →
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Register Free →
       </a>
     </div>
   </div>
@@ -1199,13 +1216,13 @@
   <div class="partners-strip-label">Media Partners</div>
   <div class="partners-logos">
     <div class="partner-logo-item">
-      <div class="partner-logo-img-wrap">
-        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/media_partner_bxhhmu.jpg" alt="Media Partner" class="partner-logo-img" loading="lazy">
+      <div class="partner-logo-img-wrap wrap-fill" style="background:#29a9e1;">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/media_partner_bxhhmu.jpg" alt="Naledi News" class="partner-logo-img" loading="lazy">
       </div>
     </div>
     <div class="partner-logo-item">
-      <div class="partner-logo-img-wrap">
-        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Media_partner_1_m4efel.jpg" alt="Media Partner" class="partner-logo-img" loading="lazy">
+      <div class="partner-logo-img-wrap wrap-fill" style="background:#000;">
+        <img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782402782/Media_partner_1_m4efel.jpg" alt="Longevity Magazine" class="partner-logo-img" loading="lazy">
       </div>
     </div>
   </div>
@@ -1236,7 +1253,7 @@
       <div class="section-label">About the Forum</div>
       <h2 class="section-title">Why <em>Africa Longevity</em> Forum Matters</h2>
       <div class="about-body">
-        <p>Africa Longevity Forum 2026 is a premier two-day gathering focused on the future of health resilience, longevity science, AI-driven healthcare systems, indigenous biodiversity, biotechnology, workforce wellness, and sustainable economic transformation across Africa.</p>
+        <p>Africa Longevity Forum 2026 is a premier two-day hybrid gathering — held in person on 29 June and online via Zoom on 30 June, with free registration — focused on the future of health resilience, longevity science, AI-driven healthcare systems, indigenous biodiversity, biotechnology, workforce wellness, and sustainable economic transformation across Africa.</p>
         <p>The forum creates a platform for scientists, investors, governments, universities, health institutions, young innovators, biotech startups, environmental researchers, and development organizations to collaborate on scalable solutions that improve lifespan, productivity, and economic resilience across the continent.</p>
         <p>Organised by AFROLONGEVITY, the International Longevity Summit Africa (ILSA), and TAFFD's — Transdisciplinary Agora for Future Discussions — this is Africa's most important convergence of longevity science and economic thinking.</p>
       </div>
@@ -1311,8 +1328,8 @@
   <div class="section-label">Conference Program</div>
   <h2 class="section-title">Two Days of <em>Transformative Science</em></h2>
   <div class="program-tabs">
-    <button class="prog-tab active" onclick="switchDay('day1',this)">Day 1 — 29 June</button>
-    <button class="prog-tab" onclick="switchDay('day2',this)">Day 2 — 30 June</button>
+    <button class="prog-tab active" onclick="switchDay('day1',this)">Day 1 — 29 June · In Person</button>
+    <button class="prog-tab" onclick="switchDay('day2',this)">Day 2 — 30 June · Online</button>
   </div>
   <div class="prog-legend">
     <span class="prog-legend-item"><span class="prog-legend-dot" style="background:var(--gold);"></span> Keynote</span>
@@ -1322,6 +1339,7 @@
     <span class="prog-legend-item"><span class="prog-legend-dot" style="background:#6f7d8a;"></span> Break</span>
   </div>
   <div class="day-panel active" id="day1">
+    <div class="day-format in-person">📍 Monday 29 June · Fully In Person at SMU, Tshwane</div>
     <div class="day-theme">Decoding Aging — The Science, Exploring Predictive Health Approaches &amp; the Policy of Longevity</div>
     <div class="session-list">
       <div class="session-item"><div class="session-time">08:00</div><div class="session-body"><span class="session-type-badge badge-break">Registration</span><div class="session-title">Arrivals &amp; Morning Coffee</div></div></div>
@@ -1344,6 +1362,7 @@
     </div>
   </div>
   <div class="day-panel" id="day2">
+    <div class="day-format online">💻 Tuesday 30 June · Online via Zoom</div>
     <div class="day-theme">The African Advantage — Indigenous Biodiversity, Workforce Resilience &amp; the Longevity Economy</div>
     <div class="session-list">
       <div class="session-item"><div class="session-time">08:00</div><div class="session-body"><span class="session-type-badge badge-break">Registration</span><div class="session-title">Arrivals, Coffee &amp; Day-One Recap</div></div></div>
@@ -1525,6 +1544,14 @@
       <div class="speaker-bio"><div class="speaker-bio-inner">Dr Gauta Gold Matlou is the current <strong>Co-Chair of the South African Young Academy of Science (SAYAS)</strong> and works as a senior scientist at the Sefako Makgatho Health Sciences University. He is an NRF-rated chemist specialising in nanomedicine and advanced drug-delivery systems. His research focuses on developing metallic nanoparticle-based drug carriers and photoactive dyes to improve targeted cancer therapies — aiming to enhance treatment effectiveness while reducing side effects associated with conventional therapies. He is an alumnus of the Mail &amp; Guardian Top 200 Young South Africans, the Lindau Nobel Laureate Meetings, and the Hult-Prize global entrepreneurship programme.</div></div>
       <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
     </div>
+    <div class="speaker-card">
+      <div class="speaker-avatar"><img src="https://res.cloudinary.com/dmqjqn6x3/image/upload/v1782590176/Prof_Christa_Janse_van_Rensburg_ns1wpa.jpg" alt="Prof Christa Janse van Rensburg" loading="lazy"></div>
+      <div class="speaker-role">Sports & Exercise Medicine</div>
+      <div class="speaker-name">Prof Christa Janse van Rensburg</div>
+      <div class="speaker-org">Head of Sports Medicine & Director of SEMLI, University of Pretoria <br>South Africa</div>
+      <div class="speaker-bio"><div class="speaker-bio-inner">Professor Christa Janse van Rensburg is a full professor and Head of the Department in the Section of Sports Medicine, Faculty of Health Sciences at the University of Pretoria, and the recently appointed Director of <strong>SEMLI</strong> (Sports, Exercise Medicine, and Lifestyle Institute). A qualified rheumatologist, she holds an undergraduate medical degree (MBChB – cum laude), an MSc in sports and exercise medicine, and an MMed in physical medicine (rheumatology – cum laude). She earned her doctorate (DMed) in internal medicine.<br><br>She is a fellow of the American College of Sports Medicine (FACSM) and the International Sports Medicine Federation (FFIMS). Her DMed studies highlighted the benefits of exercise for patients with rheumatoid arthritis. Her current research explores travel in athletes and injuries, illnesses, and mental health issues across various sports disciplines — with ongoing international collaborations including Amsterdam University Medical Centres (Netherlands), Leeds Beckett University (United Kingdom), Limerick University (Ireland), and Aspetar Orthopaedic Hospital (Qatar).</div></div>
+      <button class="speaker-bio-toggle" onclick="toggleSpeakerBio(this)" aria-expanded="false">Read more ↓</button>
+    </div>
   </div>
   <p class="speakers-notice">More speaker announcements coming soon — follow us for updates</p>
 </section>
@@ -1553,16 +1580,16 @@
 <div class="ticket-band">
   <div class="ticket-band-inner">
     <div class="ticket-band-text">
-      <div class="ticket-eyebrow">Registration Now Open</div>
+      <div class="ticket-eyebrow">Free Registration Now Open</div>
       <h3>Secure Your Seat at<br><span>Africa's Longevity Summit</span></h3>
-      <p>Tickets are available via Quicket. Join 200+ delegates from 15+ countries for two days that will shape Africa's health and economic future.</p>
+      <p>Attendance is <strong>free, but registration is required</strong> for both days. Join delegates from 15+ countries — in person on 29 June and online via Zoom on 30 June.</p>
     </div>
     <div class="ticket-band-actions">
       <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="btn-ticket">
-        <svg viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2z"/></svg>
-        Buy Tickets on Quicket
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Register Free
       </a>
-      <div class="ticket-note">Powered by <a href="https://www.quicket.co.za" target="_blank">Quicket</a> — Secure online ticketing</div>
+      <div class="ticket-note">Free registration via <a href="https://www.quicket.co.za" target="_blank">Quicket</a> — required for attendance</div>
     </div>
   </div>
 </div>
@@ -1631,9 +1658,10 @@
       </div>
       <p class="venue-desc">SMU is one of Africa's foremost health sciences universities, providing a prestigious and purpose-built academic environment for this landmark forum. Located in Tshwane, Pretoria, it is easily accessible from across the African continent and the world.</p>
       <div class="venue-bullets">
+        <div class="venue-bullet"><span class="venue-bullet-icon">📍</span> Day 1 (29 June) hosted fully in person at SMU</div>
+        <div class="venue-bullet"><span class="venue-bullet-icon">💻</span> Day 2 (30 June) streamed online via Zoom</div>
         <div class="venue-bullet"><span class="venue-bullet-icon">✈</span> 45 min from OR Tambo International Airport</div>
         <div class="venue-bullet"><span class="venue-bullet-icon">🏨</span> Hotels and accommodation nearby</div>
-        <div class="venue-bullet"><span class="venue-bullet-icon">🌐</span> Global transport links via Johannesburg</div>
       </div>
       <a href="https://maps.google.com/?q=Sefako+Makgatho+Health+Sciences+University+Garankuwa" target="_blank" class="btn-outline" style="width:fit-content;">Get Directions →</a>
     </div>
@@ -1833,17 +1861,17 @@
   <div class="register-content">
     <div class="section-label">Registration</div>
     <h2 class="section-title">Secure Your Place at Africa's Premier Longevity Forum</h2>
-    <p class="register-desc">Join 300+ delegates, 30+ world-class speakers, and innovators from 15+ countries for two transformative days in Tshwane, South Africa — 29 to 30 June 2026.</p>
+    <p class="register-desc">Attendance is <strong>free, but registration is required</strong> for both days. Join world-class speakers and innovators from 15+ countries — fully in person on Monday 29 June 2026 at SMU, Tshwane, and online via Zoom on Tuesday 30 June 2026.</p>
     <div class="register-actions">
       <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank" class="btn-ticket" style="font-size:0.95rem;">
-        <svg viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c1.1 0 2 .9 2 2s-.9 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2z"/></svg>
-        Buy Tickets Now
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Register Free Now
       </a>
       <a href="mailto:afrolongevity@taffds.org?subject=Research%20Submission" class="btn-outline-white">Submit Research</a>
       <a href="mailto:afrolongevity@taffds.org?subject=Sponsorship%20Enquiry" class="btn-outline-white">Become a Sponsor</a>
     </div>
     <div class="register-quicket-note">
-      Tickets sold securely via <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank">Quicket</a> &nbsp;·&nbsp; For group bookings contact <a href="mailto:afrolongevity@taffds.org">afrolongevity@taffds.org</a>
+      Free registration via <a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank">Quicket</a> &nbsp;·&nbsp; A Zoom link for Day 2 will be shared with registered attendees &nbsp;·&nbsp; Group bookings: <a href="mailto:afrolongevity@taffds.org">afrolongevity@taffds.org</a>
     </div>
   </div>
 </section>
@@ -1895,7 +1923,7 @@
     <div>
       <div class="footer-col-title">Participate</div>
       <ul class="footer-links">
-        <li><a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank">Buy Tickets (Quicket)</a></li>
+        <li><a href="https://www.quicket.co.za/events/377207-longevity-science-forum-africa/#/" target="_blank">Register Free (Quicket)</a></li>
         <li><a href="mailto:afrolongevity@taffds.org">Submit Research</a></li>
         <li><a href="mailto:afrolongevity@taffds.org">Become a Sponsor</a></li>
         <li><a href="tel:+27837650764">Media Enquiries</a></li>
